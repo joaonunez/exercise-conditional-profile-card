@@ -37,6 +37,17 @@ function render(variables = {}) {
   if (!variables.city) ciudadMostrada = "Sin Ciudad";
   let paisMostrado = `${variables.country}`;
   if (!variables.country) paisMostrado = "Sin Pais";
+  let posicionEstablecida = `${variables.socialMediaPosition}`;
+  if (!variables.socialMediaPosition)
+    posicionEstablecida = `${variables.socialMediaPosition}`;
+  let twitterAsignado = `${variables.twitter}`;
+  if (!variables.twitter) twitterAsignado = `${variables.twitter}`;
+  let githubAsignado = `${variables.github}`;
+  if (!variables.github) githubAsignado = `${variables.github}`;
+  let linkedinAsignado = `${variables.linkedin}`;
+  if (!variables.linkedin) linkedinAsignado = `${variables.linkedin}`;
+  let instagramAsignado = `${variables.instagram}`;
+  if (!variables.instagram) instagramAsignado = `${variables.instagram}`;
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -44,11 +55,11 @@ function render(variables = {}) {
           <h1>${nombreMostrado}</h1>
           <h2>${rolMostrado}</h2>
           <h3>${ciudadMostrada + ", " + paisMostrado}</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <ul class="${posicionEstablecida}">
+            <li><a href="https://twitter.com/${twitterAsignado}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${githubAsignado}" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedinAsignado}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagramAsignado}" target="_blank"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
